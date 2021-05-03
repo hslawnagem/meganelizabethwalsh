@@ -1,5 +1,5 @@
 :root {
-  --navbar-bg-color: rgba(246, 81, 138, 0.85);
+  --navbar-bg-color: rgba(246, 81, 138, 0.95);
   --navbar-text-color: rgba(255, 255, 255, 1);
   --navbar-text-color-focus: rgba(31, 31, 31, 1);
 }
@@ -29,24 +29,14 @@ body {
     font-size: 1.3rem;
   }
 }
-
+/*-------BACKGROUND|particlesJS-------*/
 #particles-js {
   width: 100%;
   height: 100%;
   background-color: #ffffff;
   background-size: cover;
-  background-position: 100% 100%;
   position: absolute;
   z-index: -1;
-}
-
-/*-------MAIN DIV-------*/
-.main {
-  display: flex;
-  flex-direction: column;
-  margin-top: 64px;
-  align-items: center;
-  justify-content: center;
 }
 /*-------NAVIGATION-------*/
 #navbar {
@@ -57,6 +47,7 @@ body {
   left: 0;
   right: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 5;
 }
 .navbar-container {
   display: flex;
@@ -72,7 +63,7 @@ body {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   justify-content: center;
   width: 100%;
-  margin: 4px;
+  margin: 20px;
   border-radius: 5px;
 }
 .navbar-link:focus,
@@ -193,10 +184,22 @@ body {
     margin-right: 0;
   }
 }
+/*-------MAIN DIV-------*/
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 64px;
+  align-items: center;
+  justify-content: center;
+}
 /*-------SECTION HEADINGS-------*/
+section {
+  width: 100%;
+}
 section > h2 {
-  max-height: 30px;
+  max-height: 50px;
   text-align: center;
+  margin: 40px 0 40px 0;
 }
 /*-------ABOUT-------*/
 .about-container {
@@ -214,7 +217,7 @@ section > h2 {
 .about-detail {
   max-width: 600px;
   height: auto;
-  padding: 10px;
+
   text-align: center;
   margin: 2px;
 }
@@ -222,7 +225,6 @@ section > h2 {
 .tech-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 1000px;
 }
 .tech-item {
   flex: 1 1 33%;
@@ -244,89 +246,96 @@ section > h2 {
 /*-------PROJECTS-------*/
 .projects-container {
   display: flex;
-  justify-content: center;
-  width: auto;
-  height: auto;
-  max-width: 1000px;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+}
+.project-view {
+  border: 7px solid black;
+  width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+.projects-slide {
+  display: flex;
+  justify-items: center;
+  width: 100%;
 }
 .project {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
+  min-width: 600px;
+  min-height: 500px;
 }
-.project-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-.project-heading {
-  width: inherit;
-}
-.project-image img {
-  max-width: 100%;
-  max-height: 350px;
-  margin: 20px;
+.project-media img {
+  width: 500px;
+  display: block;
+  margin: auto;
 }
 .project-links {
   display: flex;
+  justify-content: space-around;
+}
+.project-links a img {
+  height: 30px;
+  width: 30px;
+}
+.project a {
+  text-decoration-line: none;
+  width: 30px;
+}
+.slide-navigation {
+  display: flex;
   justify-content: center;
-}
-.project-link {
-  flex: 1;
-}
-.project-link img {
-  width: 75px;
-  height: 75px;
 }
 /*-------CONNECT-------*/
 .connect-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .connect-item {
   margin: 20px;
+  width: 75px;
+  height: 75px;
 }
 /*-------CONTACT-------*/
+.contact-container {
+  display: flex;
+  justify-content: center;
+}
 .contact-container form {
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  flex: 1 0 120px;
+  max-width: 400px;
 }
 .form-row label {
   display: none;
 }
 .form-row {
   display: flex;
-  margin: 5px 0px 5px 0px;
+  margin: 5px 5px 5px 5px;
 }
 .form-row input,
 .form-row textarea {
-  align-self: right;
-  flex: 100%;
+  display: flex;
+  flex: 1 0 120px;
 }
+input[type="text"] {
+  height: 35px;
+}
+
 .submit {
   width: 75px;
   height: 40px;
   text-align: center;
   align-self: flex-end;
+  text-transform: uppercase;
 }
 /*-------FOOTER-------*/
 footer {
   padding-top: 32px;
   display: flex;
   justify-content: center;
-  color: grey;
-}
-/*-------Background-canvas-------*/
-.background {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
+  color: rgb(54, 53, 53);
+  font-size: 14px;
 }

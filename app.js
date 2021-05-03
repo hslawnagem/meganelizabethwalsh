@@ -1,130 +1,80 @@
-// window.onload = function () {
-//   Particles.init({
-//     selector: ".background",
-//     color: "#DA0463",
-//   });
-// };
-
-// /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-// particlesJS.load("particles-js", "assets/particles.json", function () {
-//   console.log("callback - particles.js config loaded");
-// });
-
-const particleColor = "#FE004E";
-
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 80,
-      density: {
-        enable: true,
-        value_area: 800,
-      },
-    },
-    color: {
-      value: particleColor,
-    },
-    shape: {
-      type: "circle",
-      stroke: {
-        width: 0,
-        color: particleColor,
-      },
-      polygon: {
-        nb_sides: 5,
-      },
-      image: {
-        src: "img/github.svg",
-        width: 100,
-        height: 100,
-      },
-    },
-    opacity: {
-      value: 0.5,
-      random: true,
-      anim: {
-        enable: false,
-        speed: 1,
-        opacity_min: 0.1,
-        sync: false,
-      },
-    },
-    size: {
-      value: 3,
-      random: true,
-      anim: {
-        enable: false,
-        speed: 10,
-        size_min: 0.1,
-        sync: false,
-      },
-    },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: particleColor,
-      opacity: 0.4,
-      width: 1,
-    },
-    move: {
-      enable: true,
-      speed: 3,
-      direction: "none",
-      random: false,
-      straight: false,
-      out_mode: "out",
-      attract: {
-        enable: false,
-        rotateX: 600,
-        rotateY: 1200,
-      },
-    },
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse",
-      },
-      onclick: {
-        enable: true,
-        mode: "push",
-      },
-      resize: true,
-    },
-    modes: {
-      grab: {
-        distance: 400,
-        line_linked: {
-          opacity: 1,
-        },
-      },
-      bubble: {
-        distance: 400,
-        size: 40,
-        duration: 2,
-        opacity: 8,
-        speed: 3,
-      },
-      repulse: {
-        distance: 200,
-      },
-      push: {
-        particles_nb: 4,
-      },
-      remove: {
-        particles_nb: 2,
-      },
-    },
-  },
-  retina_detect: true,
-  config_demo: {
-    hide_card: false,
-    background_color: "#b61924",
-    background_image: "",
-    background_position: "50% 50%",
-    background_repeat: "no-repeat",
-    background_size: "cover",
-  },
+/****************************************************************************/
+particlesJS.load("particles-js", "./particles.json", function () {
+  console.log("callback - particles.js config loaded");
 });
+/****************************************************************************/
+const navbar = document.getElementById("navbar");
+const navbarToggle = navbar.querySelector(".navbar-toggle");
+
+function openMobileNavbar() {
+  navbar.classList.add("opened");
+  navbarToggle.setAttribute("aria-label", "Close navigation menu.");
+}
+
+function closeMobileNavbar() {
+  navbar.classList.remove("opened");
+  navbarToggle.setAttribute("aria-label", "Open navigation menu.");
+}
+
+navbarToggle.addEventListener("click", () => {
+  if (navbar.classList.contains("opened")) {
+    closeMobileNavbar();
+  } else {
+    openMobileNavbar();
+  }
+});
+
+const navbarMenu = navbar.querySelector(".navbar-menu");
+const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+navbarLinksContainer.addEventListener("click", (clickEvent) => {
+  clickEvent.stopPropagation();
+});
+
+navbarMenu.addEventListener("click", closeMobileNavbar);
+/****************************************************************************/
+const projectView = document.querySelector(".projects-slide");
+const projects = document.querySelectorAll(".projects-slide .project");
+
+const prevPrjctBtn = document.querySelector("#previous-project-btn");
+const nextPrjctBtn = document.querySelector("#next-project-btn");
+
+console.log(projectView);
+console.log(projects);
+console.log(prevPrjctBtn);
+console.log(nextPrjctBtn);
+
+let count = 1;
+let size = projects[0].clientWidth;
+projectView.style.transform = "translate(" + -size * count + "px";
+console.log(size);
+
+prevPrjctBtn.addEventListener("click", () => {
+  console.log("previous");
+  if (count <= 0) return;
+  projectView.style.transition = "transform 0.4s ease-in-out";
+  count--;
+  projectView.style.transform = "translate(" + -size * count + "px";
+});
+
+nextPrjctBtn.addEventListener("click", () => {
+  console.log("next");
+  if (count >= projects.length - 1) return;
+  projectView.style.transition = "transform 0.4s ease-in-out";
+  count++;
+  projectView.style.transform = "translate(" + -size * count + "px";
+});
+
+projectView.addEventListener("transitionend", () => {
+  if (projects[count].id === "lastClone") {
+    projectView.style.transition = "none";
+    count = projects.length - 2;
+    projectView.style.transform = "translate(" + -size * count + "px";
+  }
+  if (projects[count].id === "firstClone") {
+    projectView.style.transition = "none";
+    count = projects.length - count;
+    projectView.style.transform = "translate(" + -size * count + "px";
+  }
+});
+/****************************************************************************/

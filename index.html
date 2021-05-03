@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>MEW</title>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <meta name="HandheldFriendly" content="true" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preload" href="navbar.js" as="script" />
-
-    <title>MEW</title>
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <meta
       name="keywords"
       content="Megan Walsh, Megan Elizabeth Walsh, MEW, 
@@ -23,16 +15,22 @@
     />
     <meta
       name="description"
-      content="Hello! I'm Megan, I'm a software engineer. There are many Megan Walsh's, but this one is me!"
+      content="Hello! I'm Megan, I'm a Software Engineer. There are many Megan Walsh's, but this one is me!"
     />
     <meta name="author" content="Megan Walsh" />
+    <!-- favicon.ico error suppress-->
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
   <body>
     <div id="particles-js"></div>
-    <script src="particles.js"></script>
-    <script src="app.js"></script>
-
     <header id="navbar">
       <nav class="navbar-container container">
         <div class="navbar-menu detached">
@@ -124,37 +122,45 @@
             <img src="imgs/tech/postgresql.svg" alt="PostgreSQL" />
             <h4>PostgreSQL</h4>
           </div>
-          <div class="tech-item">
-            <img src="imgs/tech/excel.svg" alt="Excel" />
-            <h4>MS Excel</h4>
-          </div>
-          <div class="tech-item">
-            <img src="imgs/tech/airtable.svg" alt="Airtable" />
-            <h4>Airtable</h4>
-          </div>
-          <div class="tech-item">
-            <img src="imgs/tech/kali.svg" alt="Kali Linux" />
-            <h4>Kali</h4>
-          </div>
         </div>
       </section>
       <!------------------------------------------------------------->
       <section id="projects">
         <h2>PROJECTS</h2>
         <div class="projects-container">
-          <div class="project project-01">
-            <div class="project-details">
-              <div class="project-image project-media">
-                <a
-                  href="https://www.youtube.com/watch?v=v--kLZ3nNhQ&feature=emb_title"
-                >
+          <div class="project-view">
+            <div class="projects-slide">
+              <div class="project" id="lastClone">FIVE</div>
+              <div class="project project-01">
+                <div class="project-media">
                   <img
                     src="imgs/projects/adventurAR.png"
                     alt="AdventurAR Team"
                   />
-                </a>
+                </div>
+                <div class="project-links">
+                  <a>
+                    <img src="imgs/connect/github-original.svg"></img>
+                  </a>
+                  <a>
+                    <img src="imgs/connect/github-original.svg"></img>
+                  </a>
+                  <a>
+                    <img src="imgs/connect/github-original.svg"></img>
+                  </a>
+                </div>
+                
               </div>
+              <div class="project">TWO</div>
+              <div class="project">THREE</div>
+              <div class="project">FOUR</div>
+              <div class="project">FIVE</div>
+              <div class="project" id="firstClone">ONE</div>
             </div>
+          </div>
+          <div class="slide-navigation">
+            <button id="previous-project-btn">PREV</button>
+            <button id="next-project-btn">NEXT</button>
           </div>
         </div>
       </section>
@@ -187,7 +193,7 @@
               <label for="message">Message:</label>
               <textarea
                 placeholder="Message"
-                rows="4"
+                rows="5"
                 name="message"
                 id="message"
                 required
@@ -203,22 +209,12 @@
         <div class="connect-container">
           <div class="connect-item">
             <a href="https://www.linkedin.com/in/hslawnagem/">
-              <img
-                src="imgs/connect/linkedin-plain.svg"
-                alt="LinkedIn"
-                width="75"
-                height="75"
-              />
+              <img src="imgs/connect/linkedin-plain.svg" alt="LinkedIn" />
             </a>
           </div>
           <div class="connect-item">
             <a href="https://github.com/hslawnagem">
-              <img
-                src="imgs/connect/github-original.svg"
-                alt="GitHub"
-                width="75"
-                height="75"
-              />
+              <img src="imgs/connect/github-original.svg" alt="GitHub" />
             </a>
           </div>
         </div>
@@ -228,5 +224,7 @@
     <footer>
       <span>Megan Elizabeth Walsh 2021</span>
     </footer>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
