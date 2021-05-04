@@ -39,18 +39,11 @@ const projects = document.querySelectorAll(".projects-slide .project");
 const prevPrjctBtn = document.querySelector("#previous-project-btn");
 const nextPrjctBtn = document.querySelector("#next-project-btn");
 
-console.log(projectView);
-console.log(projects);
-console.log(prevPrjctBtn);
-console.log(nextPrjctBtn);
-
 let count = 1;
 let size = projects[0].clientWidth;
 projectView.style.transform = "translate(" + -size * count + "px";
-console.log(size);
 
 prevPrjctBtn.addEventListener("click", () => {
-  console.log("previous");
   if (count <= 0) return;
   projectView.style.transition = "transform 0.4s ease-in-out";
   count--;
@@ -58,7 +51,6 @@ prevPrjctBtn.addEventListener("click", () => {
 });
 
 nextPrjctBtn.addEventListener("click", () => {
-  console.log("next");
   if (count >= projects.length - 1) return;
   projectView.style.transition = "transform 0.4s ease-in-out";
   count++;
@@ -76,5 +68,9 @@ projectView.addEventListener("transitionend", () => {
     count = projects.length - count;
     projectView.style.transform = "translate(" + -size * count + "px";
   }
+});
+window.addEventListener("resize", () => {
+  size = projects[0].clientWidth;
+  projectView.style.transform = "translate(" + -size * count + "px";
 });
 /****************************************************************************/
