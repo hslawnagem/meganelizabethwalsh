@@ -104,38 +104,32 @@ body {
   border: none;
   background-color: transparent;
   width: 40px;
-  height: 40px;
-  margin-left: auto;
+  height: inherit;
+  /* margin-left: auto; */
+  margin-right: 3vw;
   float: right;
   display: block;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-direction: column; */
 }
-
-@media (min-width: 600px) {
-  .toggle {
-    display: none;
-  }
-}
-.burger-bar {
+#navbar .toggle .burger-bar {
   display: block;
   width: 25px;
-  height: 3px;
-  margin: 2px;
-  background-color: black;
+  height: 2px;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out,
     opacity 0.2s ease-in-out;
 }
-.toggle:focus .burger-bar,
-.toggle:hover .burger-bar {
-  background-color: var(--navbar-text-color-focus);
+#navbar .toggle:hover .burger-bar {
+  background-color: rgb(0, 0, 0);
 }
-#navbar.open .toggle .burger-bar:first-child,
-#navbar.open .toggle .burger-bar:last-child {
+#navbar.open .toggle .burger-bar {
   position: absolute;
   margin: 0;
-  width: 30px;
+  width: 25px;
+  background-color: black;
+}
+#navbar.open .toggle:hover .burger-bar {
+  background-color: white;
 }
 #navbar.open .toggle .burger-bar:first-child {
   transform: rotate(45deg);
@@ -143,6 +137,11 @@ body {
 
 #navbar.open .toggle .burger-bar:last-child {
   transform: rotate(-45deg);
+}
+@media (min-width: 600px) {
+  .toggle {
+    display: none;
+  }
 }
 /*-------MAIN DIV-------*/
 .main {
