@@ -3,39 +3,42 @@ particlesJS.load("particles-js", "./particles.json", function () {
   console.log("callback - particles.js config loaded");
 });
 /****************************************************************************/
-const navbar = document.getElementById("navbar");
-const navbarToggle = navbar.querySelector(".navbar-toggle");
-
-function openMobileNavbar() {
-  navbar.classList.add("opened");
+const navbar = document.querySelector("#navbar");
+const navbarMenu = navbar.querySelector("#navbar .menu");
+const navbarItems = navbar.querySelectorAll("#navbar .menu .item");
+const navbarToggle = navbar.querySelector("#navbar .toggle");
+// Open
+function openNavbar() {
+  navbarMenu.classList.add("active");
+  navbar.classList.add("open");
   navbarToggle.setAttribute("aria-label", "Close navigation menu.");
 }
-
-function closeMobileNavbar() {
-  navbar.classList.remove("opened");
+function closeNavbar() {
+  navbarMenu.classList.remove("active");
+  navbar.classList.remove("open");
   navbarToggle.setAttribute("aria-label", "Open navigation menu.");
 }
-
+// Toggle drawer menu
 navbarToggle.addEventListener("click", () => {
-  if (navbar.classList.contains("opened")) {
-    closeMobileNavbar();
+  if (navbar.classList.contains("open")) {
+    closeNavbar();
   } else {
-    openMobileNavbar();
+    openNavbar();
   }
 });
-
-const navbarMenu = navbar.querySelector(".navbar-menu");
-const navbarLinksContainer = navbar.querySelector(".navbar-links");
-
-navbarLinksContainer.addEventListener("click", (clickEvent) => {
-  clickEvent.stopPropagation();
+// Close nav drawer upon user selection
+navbarItems.forEach((item) =>
+  item.addEventListener("click", () => {
+    if (navbar.classList.contains("open")) closeNavbar();
+  })
+);
+// Close nav drawer when screen is resized
+window.addEventListener("resize", () => {
+  closeNavbar();
 });
-
-navbarMenu.addEventListener("click", closeMobileNavbar);
 /****************************************************************************/
 const projectView = document.querySelector(".projects-slide");
 const projects = document.querySelectorAll(".projects-slide .project");
-
 const prevPrjctBtn = document.querySelector("#previous-project-btn");
 const nextPrjctBtn = document.querySelector("#next-project-btn");
 
