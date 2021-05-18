@@ -54,7 +54,7 @@ prevPrjctBtn.addEventListener("click", () => {
 });
 
 nextPrjctBtn.addEventListener("click", () => {
-  if (count >= projects.length - 1) return;
+  if (count >= projects.length) return;
   projectView.style.transition = "transform 0.4s ease-in-out";
   count++;
   projectView.style.transform = "translate(" + -size * count + "px";
