@@ -7,6 +7,7 @@ const navbar = document.querySelector("#navbar");
 const navbarMenu = navbar.querySelector("#navbar .menu");
 const navbarItems = navbar.querySelectorAll("#navbar .menu .item");
 const navbarToggle = navbar.querySelector("#navbar .toggle");
+const body = document.querySelector("body");
 // Open
 function openNavbar() {
   navbarMenu.classList.add("active");
@@ -32,6 +33,12 @@ navbarItems.forEach((item) =>
     if (navbar.classList.contains("open")) closeNavbar();
   })
 );
+//Close navbar when user clicks outside of drawer
+document.addEventListener("click", (e) => {
+  if (navbar.classList.contains("open")) {
+    closeNavbar();
+  }
+});
 // Close nav drawer when screen is resized
 window.addEventListener("resize", () => {
   closeNavbar();

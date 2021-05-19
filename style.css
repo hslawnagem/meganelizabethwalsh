@@ -5,6 +5,7 @@
   --navbar-drawer-bg-color: rgba(35, 37, 40, 0.97);
   --navbar-link-color: rgb(234, 246, 255);
   --navbar-link-hover-color: rgb(0, 159, 253);
+  --tech-section-width: 70vw;
   --project-media-border-color: rgb(35, 37, 40);
   --project-slide-arrow-color: rgb(42, 42, 114);
   --contact-form-input-border-color: rgb(42, 42, 114);
@@ -22,6 +23,7 @@
     --project-width: 70vw;
     --project-media-width: 69vw;
     --project-slide-width: 65vw;
+    --tech-section-width: 90vw;
   }
 }
 html,
@@ -207,7 +209,7 @@ section > h2 {
 .tech-proficiencies-list {
   display: flex;
   flex-wrap: wrap;
-  width: 70vw;
+  width: var(--tech-section-width);
   margin: auto;
 }
 .tech-item {
