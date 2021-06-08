@@ -33,15 +33,18 @@ navbarItems.forEach((item) =>
     if (navbar.classList.contains("open")) closeNavbar();
   })
 );
-//Close navbar when user clicks outside of drawer
-document.addEventListener("click", (e) => {
-  if (navbar.classList.contains("open")) {
-    closeNavbar();
-  }
-});
+
 // Close nav drawer when screen is resized
 window.addEventListener("resize", () => {
   closeNavbar();
+});
+document.addEventListener("click", (e) => {
+  if (
+    e.target !== navbarToggle &&
+    e.target !== navbarMenu.classList.contains("active") &&
+    e.target !== e.target.closest("#navbar .menu")
+  )
+    closeNavbar();
 });
 /****************************************************************************/
 const projectView = document.querySelector(".projects-slide");
