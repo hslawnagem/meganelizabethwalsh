@@ -132,6 +132,9 @@ body {
   float: right;
   display: block;
 }
+.toggle > * {
+  pointer-events: none;
+}
 #navbar .toggle .burger-bar {
   display: block;
   width: 25px;
