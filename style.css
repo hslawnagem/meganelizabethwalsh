@@ -5,6 +5,8 @@
   --navbar-drawer-bg-color: rgba(35, 37, 40, 0.97);
   --navbar-link-color: rgb(234, 246, 255);
   --navbar-link-hover-color: rgb(0, 159, 253);
+  --about-background-color: rgba(255, 255, 255, 1);
+  --about-border-color: rgb(35, 37, 40);
   --tech-section-width: 70vw;
   --project-media-border-color: rgb(35, 37, 40);
   --project-slide-arrow-color: rgb(42, 42, 114);
@@ -195,15 +197,17 @@ section > h2 {
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .about-detail {
   max-width: 600px;
-  height: auto;
-
+  height: 25vh;
   text-align: center;
   margin: 2px;
+  background-color: var(--about-background-color);
+  border: 2px solid var(--about-border-color);
+  border-radius: 10px;
 }
 /*-------TECH-------*/
 .tech-container {
