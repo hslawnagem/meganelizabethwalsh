@@ -259,7 +259,7 @@ section > h2 {
   display: flex;
   flex-direction: column;
   min-width: var(--project-width);
-
+  padding-top: 10px;
   /* min-height: 500px; */
 }
 .project-media {
@@ -272,6 +272,7 @@ section > h2 {
   margin: auto;
   border: 2px solid var(--project-media-border-color);
   border-radius: 10px;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.39);
 }
 .project-links {
   float: right;
