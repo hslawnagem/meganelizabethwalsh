@@ -64,12 +64,11 @@ prevPrjctBtn.addEventListener("click", () => {
 });
 
 nextPrjctBtn.addEventListener("click", () => {
-  if (count >= projects.length) return;
+  if (count >= projects.length - 1) return;
   projectView.style.transition = "transform 0.4s ease-in-out";
   count++;
   projectView.style.transform = "translate(" + -size * count + "px";
 });
-
 projectView.addEventListener("transitionend", () => {
   if (projects[count].id === "lastClone") {
     projectView.style.transition = "none";
