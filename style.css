@@ -201,13 +201,18 @@ section > h2 {
   justify-content: space-between;
 }
 .about-detail {
-  max-width: 600px;
+  max-width: 700px;
   height: 25vh;
-  text-align: center;
-  margin: 2px;
+  margin: 20px;
   background-color: var(--about-background-color);
   border: 2px solid var(--about-border-color);
   border-radius: 10px;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.39);
+  /* TEXT STYLING */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /*-------TECH-------*/
 .tech-container {
