@@ -3,25 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>MEW</title>
+		<title>mew</title>
 
-		<!-- update the version number as needed -->
-		<script defer src="/__/firebase/9.0.0/firebase-app.js"></script>
-		<!-- include only the Firebase features as you need -->
-		<script defer src="/__/firebase/9.0.0/firebase-auth.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-database.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-firestore.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-functions.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-messaging.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-storage.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-analytics.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-remote-config.js"></script>
-		<script defer src="/__/firebase/9.0.0/firebase-performance.js"></script>
-		<!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-		<script defer src="/__/firebase/init.js?useEmulator=true"></script>
 		<meta charset="UTF-8" />
 		<meta
 			name="viewport"
@@ -82,7 +65,7 @@
 		</header>
 		<div class="main">
 			<section id="about">
-				<h2>ABOUT</h2>
+				<h2>About</h2>
 				<div class="about-container">
 					<div class="about-container">
 						<div class="about-detail">
@@ -98,7 +81,7 @@
 				</div>
 			</section>
 			<section id="tech">
-				<h2>TECH</h2>
+				<h2>Tech</h2>
 				<div class="tech-container">
 					<div class="tech-proficiencies-list">
 						<div class="tech-item">
@@ -142,7 +125,7 @@
 			</section>
 			<!------------------------------------------------------------->
 			<section id="projects">
-				<h2>PROJECTS</h2>
+				<h2>Projects</h2>
 				<div class="projects-container">
 					<div class="project-view">
 						<div class="projects-slide">
@@ -236,7 +219,7 @@
 			</section>
 			<!------------------------------------------------------------->
 			<section id="contact">
-				<h2>CONTACT</h2>
+				<h2>Contact</h2>
 				<div class="contact-container">
 					<form action="https://formspree.io/xoqkogqg" method="POST">
 						<div class="form-row name">
@@ -275,7 +258,7 @@
 			</section>
 			<!------------------------------------------------------------->
 			<section id="connect">
-				<h2>CONNECT</h2>
+				<h2>Connect</h2>
 				<div class="connect-container">
 					<div class="connect-item">
 						<a href="https://www.linkedin.com/in/hslawnagem/">
@@ -292,51 +275,9 @@
 		</div>
 		<!------------------------------------------------------------->
 		<footer>
-			<span>Megan Elizabeth Walsh 2021</span>
+			<span>Megan Walsh 2021</span>
 		</footer>
 		<script src="particles.js?t=123456"></script>
 		<script src="app.js?t=123456"></script>
-
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				const loadEl = document.querySelector('#load');
-				// // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-				// // The Firebase SDK is initialized and available here!
-				//
-				// firebase.auth().onAuthStateChanged(user => { });
-				// firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-				// firebase.firestore().doc('/foo/bar').get().then(() => { });
-				// firebase.functions().httpsCallable('yourFunction')().then(() => { });
-				// firebase.messaging().requestPermission().then(() => { });
-				// firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-				// firebase.analytics(); // call to activate
-				// firebase.analytics().logEvent('tutorial_completed');
-				// firebase.performance(); // call to activate
-				//
-				// // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-				try {
-					let app = firebase.app();
-					let features = [
-						'auth',
-						'database',
-						'firestore',
-						'functions',
-						'messaging',
-						'storage',
-						'analytics',
-						'remoteConfig',
-						'performance',
-					].filter(feature => typeof app[feature] === 'function');
-					loadEl.textContent = `Firebase SDK loaded with ${features.join(
-						', '
-					)}`;
-				} catch (e) {
-					console.error(e);
-					loadEl.textContent =
-						'Error loading the Firebase SDK, check the console.';
-				}
-			});
-		</script>
 	</body>
 </html>
