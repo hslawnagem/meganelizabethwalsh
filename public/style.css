@@ -1,20 +1,23 @@
 :root {
 	/* COLOR VARS */
 	--body-background-color: rgba(255, 255, 255, 1);
+	--section-border-color: rgba(0, 159, 253, 0.5);
+	--section-border: 1px solid var(--section-border-color);
 	--navbar-bg-color: rgb(35, 37, 40);
 	--navbar-drawer-bg-color: rgba(35, 37, 40, 0.97);
 	--navbar-link-color: rgb(234, 246, 255);
 	--navbar-link-hover-color: rgb(0, 159, 253);
 	--about-background-color: rgba(255, 255, 255, 1);
-	--about-border-color: rgb(35, 37, 40);
 	--tech-section-width: 70vw;
-	--project-media-border-color: rgb(35, 37, 40);
+	--project-background-color: rgb(255, 255, 255);
 	--project-slide-arrow-color: rgb(42, 42, 114);
 	--contact-form-input-border-color: rgb(42, 42, 114);
 	--contact-form-focus-border-color: rgb(0, 159, 253);
 	--contact-form-submit-background-color: rgba(0, 159, 253, 0.5);
 	--contact-form-submit-border-color: rgb(42, 42, 114);
-	--test: rgb(255, 0, 0);
+	--connect-background-color: rgb(255, 255, 255);
+	--footer-background-color: rgb(255, 255, 255);
+	--test: 1px solid rgb(255, 0, 0);
 	/* DIMENSION VARS */
 	--project-width: 40vw;
 	--project-media-width: 39vw;
@@ -97,9 +100,6 @@ body {
 }
 
 @media (max-width: 600px) {
-	#navbar {
-		height: 8vh;
-	}
 	#navbar .toggle {
 		visibility: visible;
 	}
@@ -180,38 +180,54 @@ body {
 }
 /*-------SECTION HEADINGS-------*/
 section {
-	width: 100%;
-	/* min-height: 30vh; */
+	width: 100vw;
 }
-section > div > h2 {
+section > div > h3 {
 	max-height: 60px;
-	width: 100%;
+	width: 100vw;
 	text-align: center;
-	margin: 10px 0 30px 0;
+	position: relative;
+}
+/*-------LANDING-------*/
+.landing-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: var(--section-border);
+	margin-top: 34px;
+	width: 100%;
+	height: 100vh;
+}
+.landing-intro {
+	width: 90vw;
+	max-width: 1000px;
+	max-height: 50vh;
+	/* TEXT STYLING */
+	text-align: center;
+	overflow: hidden;
 }
 /*-------ABOUT-------*/
 .about-container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	border: 2px solid var(--about-border-color);
+	border: var(--section-border);
 	background-color: var(--about-background-color);
-	margin-top: 44px;
-	width: 100%;
+	width: 100vw;
+	height: 85vh;
 }
 .about-detail {
-	max-width: 700px;
-	max-height: 50vh;
-	margin: 0 0 20px 0;
-	background-color: var(--about-background-color);
-
-	/* TEXT STYLING */
-	text-align: center;
 	display: flex;
-	justify-content: center;
+	justify-items: center;
 	align-items: center;
+	width: 90vw;
+	max-width: 1000px;
+	background-color: var(--about-background-color);
+	align-self: center;
+	flex-basis: 70%;
+	text-align: center;
 	overflow: hidden;
 }
+
 /*-------TECH-------*/
 .tech-container {
 	width: 100%;
@@ -242,6 +258,8 @@ section > div > h2 {
 /*-------PROJECTS-------*/
 .projects-container {
 	width: 100%;
+	border: var(--section-border);
+	background-color: var(--project-background-color);
 }
 .project-view {
 	width: var(--project-width);
@@ -268,9 +286,7 @@ section > div > h2 {
 	width: 95%;
 	display: block;
 	margin: auto;
-	border: 2px solid var(--project-media-border-color);
 	border-radius: 10px;
-	box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.39);
 }
 .project-links {
 	float: right;
@@ -290,6 +306,7 @@ section > div > h2 {
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 15px;
 }
 .slide-navigation button {
 	background-color: transparent;
@@ -344,48 +361,34 @@ section > div > h2 {
 	top: 4px;
 }
 
-/*-------CONNECT-------*/
-.connect-container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.socials {
-	display: flex;
-	justify-content: center;
-}
-.connect-item {
-	margin: 20px 40px 20px 40px;
-	width: 75px;
-	height: 75px;
-}
 /*-------CONTACT-------*/
 .contact-container {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	height: 60vh;
 }
 .contact-container form {
 	display: flex;
 	flex-direction: column;
-	flex: 1 0 120px;
-	max-width: 400px;
 }
 .form-row label {
 	display: none;
 }
 .form-row {
-	display: flex;
 	margin: 5px 5px 5px 5px;
+	display: flex;
 }
 .form-row input,
 .form-row textarea {
-	display: flex;
-	flex: 1 0 120px;
 	border-radius: 5px;
 	outline: none !important;
 	border: 1px solid var(--contact-form-input-border-color);
+	width: 40vw;
+	min-width: 200px;
+	max-width: 500px;
+	display: flex;
 }
 input[type='text'] {
 	height: 35px;
@@ -394,7 +397,6 @@ input:focus,
 textarea:focus {
 	outline: none !important;
 	border: 2px solid var(--contact-form-focus-border-color);
-	/* box-shadow: 0 0 5px var(--contact-form-focus-border-color); */
 }
 .submit {
 	width: 75px;
@@ -408,11 +410,36 @@ textarea:focus {
 	border: 1px solid var(--contact-form-submit-border-color);
 	background-color: var(--contact-form-submit-background-color);
 }
+/*-------CONNECT-------*/
+#connect {
+	padding-bottom: 0 !important;
+}
+.connect-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: var(--section-border);
+	background-color: var(--project-background-color);
+	overflow: hidden;
+	height: 30vh !important;
+}
+.socials {
+	display: flex;
+	justify-content: center;
+}
+.connect-item {
+	margin: 20px 40px 20px 40px;
+	width: 75px;
+	height: 75px;
+}
 /*-------FOOTER-------*/
 footer {
-	padding-top: 32px;
+	padding: 5px;
+	margin: auto;
+	margin-top: 0;
 	display: flex;
 	justify-content: center;
 	color: rgb(54, 53, 53);
-	font-size: 14px;
+	font-size: 12px;
+	background-color: var(--footer-background-color);
 }
