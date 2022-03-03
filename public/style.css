@@ -22,8 +22,8 @@
 	/* NAV DIMENSION VARS */
 	--navbar-height: 100px;
 	/* PROJECT DIMENSION VARS */
-	--project-width: 50vw;
-	--project-media-width: 49vw;
+	--project-width: 60vw;
+	--project-media-width: 59vw;
 	--project-slide-width: 45vw;
 	/* TECH DIMENSION VARS */
 	--tech-section-width: 70vw;
@@ -47,7 +47,7 @@ body {
 	padding: 0px;
 	overflow-x: hidden;
 	font-size: 100%;
-	font-family: 'Roboto Mono';
+	font-family: 'Titillium Web', sans-serif;
 	color: var(--body-text-color);
 	scroll-behavior: smooth;
 }
@@ -283,7 +283,7 @@ section:before {
 	width: 100%;
 	border: var(--section-border);
 	background-color: var(--section-background-color);
-	min-height: 95vh;
+	height: auto;
 	display: flex;
 	flex-direction: column;
 }
@@ -310,7 +310,6 @@ section:before {
 	width: 95%;
 	display: block;
 	margin: auto;
-	border-radius: 10px;
 }
 .project-links {
 	float: right;
@@ -322,8 +321,8 @@ section:before {
 	margin: 15px 15px 0 15px;
 }
 .project-links a img {
-	height: 45px;
-	width: 45px;
+	height: 30px;
+	width: 30px;
 }
 .slide-navigation {
 	width: var(--project-slide-width);
