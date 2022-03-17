@@ -53,18 +53,21 @@ body {
 }
 @media (min-width: 0px) {
 	body {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 	}
 }
 @media (min-width: 960px) {
 	body {
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 	}
 }
 @media (min-width: 1100px) {
 	body {
-		font-size: 1.7rem;
+		font-size: 1.4rem;
 	}
+}
+h3 {
+	font-size: 1.2rem !important;
 }
 /*-------BACKGROUND|particlesJS-------*/
 #particles-js {
@@ -240,11 +243,17 @@ section:before {
 }
 .about-detail {
 	background-color: #1a4470;
+	padding: 10px;
 	border-radius: 10px;
 	margin: 20px;
 	text-align: center;
 	flex: 0 1 20%;
 	overflow: hidden;
+}
+
+.about-detail p {
+	font-size: 1rem;
+	margin: auto;
 }
 
 @media (max-width: 800px) {
@@ -269,8 +278,8 @@ section:before {
 	margin-top: 10px;
 }
 .tech-item img {
-	width: 70px;
-	height: 70px;
+	width: 80px;
+	height: 80px;
 }
 .tech-item a {
 	text-decoration-line: none;
@@ -308,8 +317,10 @@ section:before {
 }
 .project-media img {
 	width: 95%;
+	height: auto;
 	display: block;
 	margin: auto;
+	border-radius: 10px;
 }
 .project-links {
 	float: right;
